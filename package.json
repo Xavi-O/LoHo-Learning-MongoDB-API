@@ -1,20 +1,17 @@
 {
-  "name": "mongodb-powerbi",
+  "name": "mongodb-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "MongoDB API middleware for Vercel",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vercel dev",
+    "deploy": "vercel"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^5.1.0",
-    "express-basic-auth": "^1.2.1",
-    "mongodb": "^6.15.0"
+    "express-basic-auth": "latest",
+    "mongodb": "latest"
+  },
+  "devDependencies": {
+    "vercel": "^25.2.0"
   }
 }

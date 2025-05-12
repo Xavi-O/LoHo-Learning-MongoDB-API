@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "env": {
+    "MONGO_URI": "mongodb://readOnlyAdmin:989yourSecurePassword1234@146.190.205.68:27017/ebooks_longhorn?authSource=admin",
+    "API_USERNAME": "Xavier",
+    "API_PASSWORD": "#@Xavi97"
+  },
+  "routes": [
+    {
+      "src": "/api/collections",
+      "dest": "/api/collections.js"
+    },
+    {
+      "src": "/api/collections/count",
+      "dest": "/api/collections.js?count=true"
+    },
+    {
+      "src": "/api/collections/([^/]+)/count",
+      "dest": "/api/collections/[collectionName].js?collectionName=$1&count=true"
+    },
+    {
+      "src": "/api/collections/([^/]+)$",
+      "dest": "/api/collections/[collectionName].js?collectionName=$1"
+    },
+    {
+      "src": "/api/collections/([^/]+)/([^/]+)",
+      "dest": "/api/collections/[collectionName].js?collectionName=$1&id=$2"
+    },
+    {
+      "src": "/api/collections/([^/]+)/filter/([^/]+)/([^/]+)",
+      "dest": "/api/collections/[collectionName].js?collectionName=$1&filterField=$2&filterValue=$3"
+    }
+  ]
+}
